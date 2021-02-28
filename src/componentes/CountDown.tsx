@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from '../styles/componentes/Countdown.module.css';
 export function Countdown() {
-  const [time, setTime] = useState(24 * 60)
+  const [time, setTime] = useState(25 * 60)
   const [active, setActive] = useState(false)
 
   const minutes = Math.floor(time/60);
@@ -15,7 +15,8 @@ export function Countdown() {
     setActive(true)
   }
 
-  useEffect( () => { if (active && time > 0) {
+  useEffect( () => { 
+    if (active && time > 0) {
     setTimeout(() => {
       setTime(time - 1)
     }, 1000)
